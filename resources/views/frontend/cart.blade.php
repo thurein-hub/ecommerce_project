@@ -322,9 +322,15 @@
                               I agree with the terms and conditions
                             </label>
                           </p>
+                          @if(Auth::user())
                           <a href="{{route('checkout')}}" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout">
                             Proceed To Checkout
                           </a>
+                          @else
+                          <a href="{{route('login')}}" name="checkout" id="cartCheckout" class="btn btn--small-wide checkout">
+                            Proceed To Checkout
+                          </a>
+                          @endif
                           <div class="paymnet-img"><img src="assets/images/payment-img.jpg" alt="Payment"></div>
                           <p><a href="#;">Checkout with Multiple Addresses</a></p>
                         </div>
